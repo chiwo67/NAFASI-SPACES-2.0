@@ -18,9 +18,6 @@ body {
   color: aliceblue;
 }
 
-button {
-  min-width: 140px;
-}
 
 section[id="T&C"] {
   background: rgba(255, 255, 255, 0.12);

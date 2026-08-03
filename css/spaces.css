@@ -1,0 +1,49 @@
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #F5D7AB, #000000);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.space-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-now-button {
+  display: inline-block;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 12px;
+  padding: 14px 32px;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.book-now-button:hover {
+  background-color: #1a7efb;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+#h-button{
+  border: #F5D7AB solid;
+  background-color: #F5D7AB;
+  padding: 1px;
+}
+
+#h-button:hover{
+  background-color: #000000;
+  color: #ffffff;
+}

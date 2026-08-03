@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Nafasi Spaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section id="body" class="min-h-screen bg-amber-50 text-slate-800">
+      <div
+        id="form"
+        class="flex min-h-screen items-center justify-center px-4 py-8"
+      >
+        <form
+          id="login-form"
+          class="w-full max-w-sm rounded-2xl bg-white/95 p-6 shadow-2xl text-slate-800 sm:p-8"
+        >
+          <h1 class="mb-2 text-2xl font-semibold text-slate-900">
+            Welcome Back
+          </h1>
+          <p class="mb-6 text-sm text-slate-500">
+            Please enter your login details.
+          </p>
+
+          <label
+            for="email"
+            class="mb-2 block text-sm font-medium text-slate-700"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            class="mb-4 w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+          />
+
+          <label
+            for="password"
+            class="mb-2 block text-sm font-medium text-slate-700"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            class="mb-4 w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+          />
+
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-amber-500 px-4 py-2.5 font-semibold text-white transition hover:bg-amber-600"
+          >
+            Log In
+          </button>
+
+          <button
+            id="create-account-button"
+            class="mt-4 w-full rounded-lg bg-amber-500 px-4 py-2.5 font-semibold text-white transition hover:bg-amber-600"
+            onclick="window.location.href = 'new-acc.html'"
+          >
+            Create Account
+          </button>
+          <a
+            href="#"
+            class="mt-4 inline-block text-sm text-blue-600 hover:text-blue-700"
+            >Forgot password?</a
+          >
+          <p id="login-error" class="text-red-500"></p>
+        </form>
+
+        
+      </div>
+      <script src="script.js"></script>
+    </section>
+  </body>
+</html>

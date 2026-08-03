@@ -10,7 +10,7 @@
   <body>
     <section class="flex min-h-screen items-center justify-center bg-amber-50 px-4 py-8">
       <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl sm:p-8">
-        <form class="space-y-4">
+        <form class="space-y-4 text-slate-800" id="create-account-form">
           <h1 class="text-2xl font-semibold text-slate-900">Create New Account</h1>
           <p class="text-sm text-slate-500">Join Nafasi Spaces and get started.</p>
 
@@ -51,8 +51,10 @@
             Already have an account?
             <a href="index.html" class="font-medium text-blue-600 hover:text-blue-700">Log in</a>
           </p>
+          <p id="create-account-error" class="text-red-500 text-center"></p>
         </form>
       </div>
     </section>
+    <script src="new-acc.js"></script>
   </body>
 </html>

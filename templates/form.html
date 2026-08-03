@@ -27,7 +27,7 @@
     <main>
         <section id="FORM" class="flex flex-col items-center justify-center px-3 py-6">
             <h2 class="font-extrabold text-3xl md:text-4xl mb-3 text-white tracking-wide">Book Your Stay</h2>
-            <form action="#" method="post"
+            <form action="#" method="post" id="booking-form"
                 class="w-full max-w-xl border border-gray-200 bg-white/95 shadow-lg rounded-xl text-black px-3 py-3 md:px-4 md:py-4">
                 <div class="mb-4">
                     <label for="name" class="mb-2 block font-extrabold text-lg">Name</label>
@@ -103,6 +103,7 @@
                         Cancel booking
                     </button>
                 </div>
+                <p class="text-red-500" id="form-error"></p>
             </form>
 
             <section id="T&C"
@@ -159,6 +160,7 @@
             <p class="w-full text-sm mt-2">© 2026 Nafasi Spaces. All rights reserved.</p>
         </section>
     </footer>
+    <script src="scripts/form.js"></script>
 </body>
 
 </html>

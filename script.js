@@ -13,5 +13,14 @@ loginForm.addEventListener('submit', function(event) {
   }
   return false;
 
-  
+  const storedEmail = JSON.parse(localStorage.getItem('email'));
+  const storedPassword = JSON.parse(localStorage.getItem('password'));
+
+  if (emailInput.value === storedEmail && passwordInput.value === storedPassword) {
+    loginError.textContent = 'You have successfully logged in!';
+    return true; 
+    window.location.href = 'home.html';
+  }else{
+    loginError.textContent = 'Invalid email or password.';
+  }
 });

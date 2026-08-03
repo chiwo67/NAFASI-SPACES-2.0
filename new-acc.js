@@ -28,4 +28,8 @@ createAccountForm.addEventListener('submit', function(event) {
   }
 
   createAccountError.textContent = 'Account created successfully!';
+  localStorage.setItem('firstName', JSON.stringify(firstName));
+  localStorage.setItem('lastName', JSON.stringify(lastName));
+  localStorage.setItem('email', JSON.stringify(email));
+  localStorage.setItem('password', JSON.stringify(password));
 });

@@ -14,7 +14,9 @@ const formError = document.getElementById("form-error");
 
 bookingForm.addEventListener("submit", function (event) {
   event.preventDefault();
-
+n
+  storedCheckIn = localStorage.setItem("checkIn");
+  storedCheckOut = localStorage.setItem("checkOut");
   if (
     !nameInput.value ||
     !emailInput.value ||
@@ -46,6 +48,18 @@ bookingForm.addEventListener("submit", function (event) {
   }
   if (emailInput.value !== localStorage.getItem("email")) {
     displayError("Email does not match stored information.");
+    return;
+  }if(checkboxInput.checked === false){
+    displayError("Please agree to the terms and conditions.");
+    return;
+  }if(check-inInput.value === checkOutInput.value){
+    displayError("Check-in and check-out dates cannot be the same.");
+    return;
+  }if(checkInInput.value === "" || checkOutInput.value === ""){
+    displayError("Please select both check-in and check-out dates.");
+    return;
+  }if (checkInInput.value === storedCheckIn && checkOutInput.value === storedCheckOut) {
+    displayError("You have already booked for these dates.");
     return;
   }
 });

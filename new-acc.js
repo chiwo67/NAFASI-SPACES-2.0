@@ -18,18 +18,40 @@ createAccountForm.addEventListener('submit', function(event) {
 
 
   if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
-    createAccountError.textContent = 'Please fill in all fields.';
+    displayMessage('Please fill in all fields.');
     return;
   }
 
   if (password !== confirmPassword) {
-    createAccountError.textContent = 'Passwords do not match.';
+    displayMessage('Passwords do not match.');
     return;
   }
 
-  createAccountError.textContent = 'Account created successfully!';
+  displayMessage('Account created successfully!');
   localStorage.setItem('firstName', JSON.stringify(firstName));
   localStorage.setItem('lastName', JSON.stringify(lastName));
   localStorage.setItem('email', JSON.stringify(email));
   localStorage.setItem('password', JSON.stringify(password));
+
+  if (password === confirmPassword) {
+    displayMessage('Account created successfully!');
+    window.location.href = 'login.html';
+    return true;    
+  }
+  if (password !== confirmPassword) {
+    displayMessage('Passwords do not match.');
+    return false;
+  }
+  if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
+    displayMessage('Please fill in all fields.');
+    return false;
+  }
+  if (checkbox.checked === false) {
+    displayMessage('Please agree to the terms and conditions.');
+    return false;
+  }
 });
+
+function displayMessage(message) {
+    createAccountError.textContent = message;
+}

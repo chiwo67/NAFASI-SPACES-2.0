@@ -6,21 +6,22 @@ const loginError = document.getElementById('login-error');
 loginForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  if (emailInput.value === '' || passwordInput.value === '') {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value;
+
+  if (email === '' || password === '') {
     loginError.textContent = 'Please fill in both email and password.';
-  }else {
-    loginError.textContent = 'You have successfully logged in!';
+    return;
   }
-  return false;
 
   const storedEmail = JSON.parse(localStorage.getItem('email'));
   const storedPassword = JSON.parse(localStorage.getItem('password'));
 
-  if (emailInput.value === storedEmail && passwordInput.value === storedPassword) {
+  if (email === storedEmail && password === storedPassword) {
     loginError.textContent = 'You have successfully logged in!';
-    return true; 
-    window.location.href = 'home.html';
-  }else{
+    loginError.className = 'text-green-500 text-sm mt-2';
+    window.location.href = 'display.html';
+  } else {
     loginError.textContent = 'Invalid email or password.';
   }
 });

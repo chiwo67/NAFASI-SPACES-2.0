@@ -1,23 +1,50 @@
 const bookingForm = document.getElementById("booking-form");
-const nameInput =
-  localStorage.getItem(JSON.parse("firstName")) ||
-  document.getElementById("name");
-const emailInput =
-  document.getElementById("email") || localStorage.getItem(JSON.parse("email"));
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
 const checkInInput = document.getElementById("check-in");
 const checkOutInput = document.getElementById("check-out");
-const roomTypeSelect = document.getElementById("room-type");
+const roomTypeSelect = document.getElementById("reason");
 const guestsInput = document.getElementById("guests");
 const paymentMethodSelect = document.getElementById("payment-method");
 const locationInput = document.getElementById("location");
+const checkboxInput = document.getElementById("checkbox");
 const formError = document.getElementById("form-error");
+
+function getStoredValue(key) {
+  const value = localStorage.getItem(key);
+  try {
+    return value ? JSON.parse(value) : "";
+  } catch {
+    return value || "";
+  }
+}
+
+const storedName = getStoredValue("firstName");
+const storedEmail = getStoredValue("email");
+let storedCheckIn = localStorage.getItem("checkIn");
+let storedCheckOut = localStorage.getItem("checkOut");
+
+nameInput.value = storedName;
+emailInput.value = storedEmail;
+
+const today = new Date().toISOString().split("T")[0];
+checkInInput.min = today;
+checkOutInput.min = today;
+
+checkInInput.addEventListener("change", function () {
+  checkOutInput.min = checkInInput.value || today;
+  if (checkOutInput.value && checkOutInput.value <= checkInInput.value) {
+    checkOutInput.value = "";
+  }
+});
 
 bookingForm.addEventListener("submit", function (event) {
   event.preventDefault();
+  formError.textContent = "";
+  validateForm();
+});
 
-  storedCheckIn = localStorage.setItem("checkIn");
-  storedCheckOut = localStorage.setItem("checkOut");
-  function validateForm() {
+function validateForm() {
   if (
     !nameInput.value ||
     !emailInput.value ||
@@ -31,43 +58,44 @@ bookingForm.addEventListener("submit", function (event) {
     displayError("Please fill in all required fields.");
     return;
   }
+
   if (checkInInput.value > checkOutInput.value) {
     displayError("Check-in date cannot be later than check-out date.");
     return;
   }
+
+  if (checkInInput.value === checkOutInput.value) {
+    displayError("Check-in and check-out dates cannot be the same.");
+    return;
+  }
+
   if (guestsInput.value < 1) {
     displayError("Number of guests must be at least 1.");
     return;
   }
-  if (guestsInput.value > 10) {
-    displayError("Number of guests cannot exceed 10.");
+
+  if (guestsInput.value > 6) {
+    displayError("Number of guests cannot exceed 6.");
     return;
-  }
-  if (nameInput.value !== localStorage.getItem("firstName")) {
-    displayError("Name does not match stored information.");
-    return;
-  }
-  if (emailInput.value !== localStorage.getItem("email")) {
-    displayError("Email does not match stored information.");
-    return;
-  }if(checkboxInput.checked === false){
-    displayError("Please agree to the terms and conditions.");
-    return;
-  }if(check-inInput.value === checkOutInput.value){
-    displayError("Check-in and check-out dates cannot be the same.");
-    return;
-  }if(checkInInput.value === "" || checkOutInput.value === ""){
-    displayError("Please select both check-in and check-out dates.");
-    return;
-  }if (checkInInput.value === storedCheckIn && checkOutInput.value === storedCheckOut) {
-    displayError("You have already booked for these dates.");
-    return;
-  }else{
-    window.location.href = "templates/checkout.html";
   }
 
+  if (!checkboxInput.checked) {
+    displayError("Please agree to the terms and conditions.");
+    return;
+  }
+
+  if (
+    checkInInput.value === storedCheckIn &&
+    checkOutInput.value === storedCheckOut
+  ) {
+    displayError("You have already booked for these dates.");
+    return;
+  }
+
+  localStorage.setItem("checkIn", checkInInput.value);
+  localStorage.setItem("checkOut", checkOutInput.value);
+  window.location.href = "checkout.html";
 }
-});
 
 function displayError(message) {
   formError.textContent = message;

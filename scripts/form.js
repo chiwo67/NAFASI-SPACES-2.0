@@ -14,9 +14,10 @@ const formError = document.getElementById("form-error");
 
 bookingForm.addEventListener("submit", function (event) {
   event.preventDefault();
-n
+
   storedCheckIn = localStorage.setItem("checkIn");
   storedCheckOut = localStorage.setItem("checkOut");
+  function validateForm() {
   if (
     !nameInput.value ||
     !emailInput.value ||
@@ -61,7 +62,11 @@ n
   }if (checkInInput.value === storedCheckIn && checkOutInput.value === storedCheckOut) {
     displayError("You have already booked for these dates.");
     return;
+  }else{
+    window.location.href = "templates/checkout.html";
   }
+
+}
 });
 
 function displayError(message) {

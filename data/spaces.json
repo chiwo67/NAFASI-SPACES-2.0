@@ -1,1 +1,114 @@
- 
+[
+  {
+    "id": "uhuru-park",
+    "category": "Leisure",
+    "name": "Uhuru Park",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStgAtp3XdXpKouI7Sn5qfWv86Qgnes7HLAXhcDgutNTw&s=10",
+    "description": "Uhuru Park is a 12.9 hectare recreational park next to Nairobi's central business district. It has an artificial lake, national monuments, and an assembly ground popular for weekend skateboarding.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "arboretum",
+    "category": "Leisure",
+    "name": "Arboretum",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZmRpHdgJD-zuqXzqn-_6EichY8-LFiUsa9OFZJOStyg&s=10",
+    "description": "Located in Kilimani near the city centre, the Arboretum has 30.4 hectares of wooded landscape and about 350 indigenous and exotic plant species.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "case-spaces",
+    "category": "Leisure",
+    "name": "Case spaces",
+    "image": "https://images.unsplash.com/photo-1578359968130-76b59bb5af13?w=600&auto=format&fit=crop&q=60",
+    "description": "A prestigious, convenient location with excellent visibility and a welcoming setting for customers.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "hidden-gardens",
+    "category": "Leisure",
+    "name": "Hidden Gardens",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3H47_7GVfojwVPB_RBv_aIIxsw9E68lL81xvo4Mdu-g&s=10",
+    "description": "Enchanting grounds that offer a tranquil, picturesque setting for events and community gatherings.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "oval",
+    "category": "Workspace",
+    "name": "Oval",
+    "image": "https://content.knightfrank.com/property/kecom315/images/da83c2ed-deb7-435d-ab00-af21979470cd-0.jpg?cio=true&w=1440&f=webp",
+    "description": "A contemporary nine-storey mixed-use development with office accommodation, retail, lifts, CCTV, backup power, water storage, parking, and accessibility facilities.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "gtc-spaces",
+    "category": "Workspace",
+    "name": "GTC Spaces",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=870&auto=format&fit=crop",
+    "description": "A modern office tower with an elegant, glossy facade, impressive height, and a landmark business setting.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "parkside-towers",
+    "category": "Workspace",
+    "name": "Parkside towers",
+    "image": "https://images.unsplash.com/photo-1610374792793-f016b77ca51a?w=600&auto=format&fit=crop&q=60",
+    "description": "A 10-storey Mombasa Road tower with underground and ground parking, around-the-clock surveillance, a Java House, and Airtel 4G/5G.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "ebenezer-spaces",
+    "category": "Workspace",
+    "name": "Ebenezer-Spaces",
+    "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&auto=format&fit=crop&q=60",
+    "description": "An efficient office space for startups and small teams to host focused meetings and discussions.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "im-pentspaces",
+    "category": "Workspace",
+    "name": "I&M pentspaces",
+    "image": "https://images.unsplash.com/photo-1564069114553-7215e1ff1890?w=600&auto=format&fit=crop&q=60",
+    "description": "A top-floor Nairobi CBD space with sweeping city views, suited to executives who value privacy and luxury.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "teja-spaces",
+    "category": "Workspace",
+    "name": "Teja spaces",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsKSGXvG194QfbaDXmzilMZVCBhwfDX-PXGvqlOntpgg&s=10",
+    "description": "Private offices, business lounges, meeting rooms, coworking spaces, and enterprise solutions in a vibrant ecosystem.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "jamhuri-showgrounds",
+    "category": "Events",
+    "name": "Jamhuri show-grounds",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYvw0-jvJjccfKj0TUejGY37i95STw2u2jjOHPxBqYUw&s=10",
+    "description": "A large field with ample seating, ideal for concerts, showgrounds, agricultural exhibitions, and food festivals.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "nairobi-street-kitchen",
+    "category": "Events",
+    "name": "Nairobi Street Kitchen",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iwWG5NzzxgtJC7JC5ahdugmitwJU4rXhEHZWVLvGWw&s=10",
+    "description": "A collection of restaurants, bars, entertainment areas, artisan vendors, live bands, and rooftop views in Westlands.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "the-alchemist",
+    "category": "Events",
+    "name": "The Alchemist",
+    "image": "https://images.squarespace-cdn.com/content/v1/63721d83ab8c8b1d0301dca8/4ceb1bbd-52a3-4b59-a232-a8b021268c9d/DIM.jpg?format=750w",
+    "description": "A lively day-and-night venue for parties, dancing, restaurants, and bars.",
+    "bookingUrl": "form.html"
+  },
+  {
+    "id": "ngong-racecourse",
+    "category": "Events",
+    "name": "Mass-house Ngong Racecourse",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Qd4POgPjHtXb6FllNTAnBLolhnlpoSYRjW3yd7Il0A&s=10",
+    "description": "A venue for horse-racing events, relaxed parties, and social gatherings that welcome local and international visitors.",
+    "bookingUrl": "form.html"
+  }
+]

@@ -29,8 +29,7 @@ There's significant demand for affordable workspace solutions in emerging market
 -https://chiwo67.github.io/NAFASI-SPACES-2.0/
 
 ## Power Point Presentations
--https://1drv.ms/p/c/1bae845a84fb6d28/IQDe195FkNblQo_fKyc-YL3sAaaXU0R4KdZs-sOjRtQLpd4?e=bwknQQ
-
+-https://1drv.ms/p/c/1bae845a84fb6d28/IQDe195FkNblQo_fKyc-YL3sAaaXU0R4KdZs-sOjRtQLpd4?e=eB4oUM
 ## Features
 
 - Browse multiple spaces

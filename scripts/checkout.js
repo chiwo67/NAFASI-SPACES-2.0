@@ -104,3 +104,5 @@ function showPaymentFields(method) {
     label.classList.toggle('border-slate-200', !isSelected);
   });
 }
+updateBookingSummary();
+showPaymentFields(document.querySelector('input[name="paymentMethod"]:checked').value);

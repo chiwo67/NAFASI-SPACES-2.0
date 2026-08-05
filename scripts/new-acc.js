@@ -49,7 +49,17 @@ createAccountForm.addEventListener('submit', function(event) {
   if (checkbox.checked === false) {
     displayMessage('Please agree to the terms and conditions.');
     return false;
+  }if (password.length < 8) {
+    displayMessage('Password must be at least 8 characters long.');
+    return false;
+  }if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+    displayMessage('Please enter a valid email address.');
+    return false;
+  }if (firstName.length < 2 || lastName.length < 2) {
+    displayMessage('First and last name must be at least 2 characters long.');
+    return false;
   }
+  
 });
 
 function displayMessage(message) {

@@ -82,6 +82,9 @@ function validateForm() {
   if (!checkboxInput.checked) {
     displayError("Please agree to the terms and conditions.");
     return;
+  }if (!emailInput.value.includes("@") || !emailInput.value.includes(".")) {
+    displayError("Please enter a valid email address.");
+    return;
   }
 
   if (

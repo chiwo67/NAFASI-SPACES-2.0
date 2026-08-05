@@ -5,7 +5,7 @@ Nafasi is a short-term storage marketplace connecting students who need temporar
 ## Problems faced
 
 - Using APIs to fetch data
--
+- completing checkout form
 
 ## Problem & Solution
 

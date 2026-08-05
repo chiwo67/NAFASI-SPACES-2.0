@@ -97,6 +97,8 @@ function validateForm() {
 
   localStorage.setItem("checkIn", checkInInput.value);
   localStorage.setItem("checkOut", checkOutInput.value);
+  localStorage.setItem("guests", guestsInput.value);
+  localStorage.setItem("location", locationInput.value.trim());
   window.location.href = "checkout.html";
 }
 

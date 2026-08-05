@@ -1,4 +1,5 @@
 const welcomeMessage = document.getElementById('welcome-message');
+const logoutButton = document.getElementById('logout-button');
 const storedFirstName = localStorage.getItem('firstName');
 
 if (welcomeMessage && storedFirstName) {
@@ -12,3 +13,8 @@ if (welcomeMessage && storedFirstName) {
     throw new Error('Invalid first name in localStorage');
   }
 }
+
+logoutButton?.addEventListener('click', () => {
+  sessionStorage.removeItem('nafasiLoggedIn');
+  window.location.href = 'login.html';
+});

@@ -18,6 +18,7 @@ loginForm.addEventListener('submit', function(event) {
   const storedPassword = JSON.parse(localStorage.getItem('password'));
 
   if (email === storedEmail && password === storedPassword) {
+    sessionStorage.setItem('nafasiLoggedIn', 'true');
     loginError.textContent = 'You have successfully logged in!';
     loginError.className = 'text-green-500 text-sm mt-2';
     window.location.href = 'display.html';

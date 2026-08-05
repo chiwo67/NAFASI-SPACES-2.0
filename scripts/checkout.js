@@ -25,3 +25,13 @@ checkoutForm.addEventListener('submit', (event) => {
   confirmation.classList.remove('hidden');
   confirmation.focus();
 });
+
+function showError(message) {
+  checkoutError.textContent = message;
+  checkoutError.classList.remove('hidden');
+}
+
+function clearError() {
+  checkoutError.textContent = '';
+  checkoutError.classList.add('hidden');
+}

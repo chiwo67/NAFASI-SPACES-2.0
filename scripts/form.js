@@ -74,8 +74,8 @@ function validateForm() {
     return;
   }
 
-  if (guestsInput.value > 6) {
-    displayError("Number of guests cannot exceed 6.");
+  if (guestsInput.value > 30) {
+    displayError("Number of guests cannot exceed 30.");
     return;
   }
 

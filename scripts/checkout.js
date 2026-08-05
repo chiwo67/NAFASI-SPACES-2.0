@@ -89,3 +89,18 @@ function getStoredValue(key) {
     return value;
   }
 }
+
+function showPaymentFields(method) {
+  mpesaFields.classList.toggle('hidden', method !== 'mpesa');
+  cardFields.classList.toggle('hidden', method !== 'card');
+  bankFields.classList.toggle('hidden', method !== 'bank');
+
+  paymentOptionLabels.forEach((label) => {
+    const isSelected = label.querySelector('input').value === method;
+    label.classList.toggle('border-2', isSelected);
+    label.classList.toggle('border-[#b7925f]', isSelected);
+    label.classList.toggle('bg-[#fff9f0]', isSelected);
+    label.classList.toggle('border', !isSelected);
+    label.classList.toggle('border-slate-200', !isSelected);
+  });
+}

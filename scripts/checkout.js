@@ -76,3 +76,16 @@ function validatePayment(method) {
 paymentOptions.forEach((option) => {
   option.addEventListener('change', () => showPaymentFields(option.value));
 });
+
+
+function getStoredValue(key) {
+  const value = localStorage.getItem(key);
+
+  if (!value) return '';
+
+  try {
+    return JSON.parse(value);
+  } catch {
+    return value;
+  }
+}

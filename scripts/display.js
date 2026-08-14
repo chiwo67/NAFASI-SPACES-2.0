@@ -1,20 +1,22 @@
 const welcomeMessage = document.getElementById('welcome-message');
 const logoutButton = document.getElementById('logout-button');
-const storedFirstName = localStorage.getItem('firstName');
 
-if (welcomeMessage && storedFirstName) {
+function _readSessionFallback() {
   try {
-    const firstName = JSON.parse(storedFirstName).trim();
-
-    if (firstName) {
-      welcomeMessage.textContent = `WELCOME TO NAFASI, ${firstName.toUpperCase()}`;
-    }
+    return JSON.parse(localStorage.getItem('nafasi_session'));
   } catch {
-    throw new Error('Invalid first name in localStorage');
+    return null;
   }
 }
 
+const session = (typeof getSession === 'function') ? getSession() : _readSessionFallback();
+
+if (welcomeMessage && session && session.firstName) {
+  const firstName = String(session.firstName).trim();
+  if (firstName) welcomeMessage.textContent = `WELCOME TO NAFASI, ${firstName.toUpperCase()}`;
+}
+
 logoutButton?.addEventListener('click', () => {
-  sessionStorage.removeItem('nafasiLoggedIn');
+  if (typeof clearSession === 'function') clearSession(); else localStorage.removeItem('nafasi_session');
   window.location.href = 'login.html';
 });

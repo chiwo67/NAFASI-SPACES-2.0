@@ -3,26 +3,29 @@ const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const loginError = document.getElementById('login-error');
 
-loginForm.addEventListener('submit', function(event) {
-  event.preventDefault();
+loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
 
-  if (email === '' || password === '') {
-    loginError.textContent = 'Please fill in both email and password.';
-    return;
-  }
+    if (email === '' || password === '') {
+        loginError.textContent = 'Please fill in both email and password.';
+        return;
+    }
 
-  const storedEmail = JSON.parse(localStorage.getItem('email'));
-  const storedPassword = JSON.parse(localStorage.getItem('password'));
+    const user = findUserByEmail(email);
 
-  if (email === storedEmail && password === storedPassword) {
-    sessionStorage.setItem('nafasiLoggedIn', 'true');
-    loginError.textContent = 'You have successfully logged in!';
+    if (!user || user.password !== password) {
+        loginError.textContent = 'Invalid email or password.';
+        return;
+    }
+
+    setSession({ id: user.id, email: user.email, role: user.role, firstName: user.firstName });
+
     loginError.className = 'text-green-500 text-sm mt-2';
-    window.location.href = 'display.html';
-  } else {
-    loginError.textContent = 'Invalid email or password.';
-  }
+    loginError.textContent = 'You have successfully logged in!';
+
+    window.location.href = user.role === 'admin' ? 'admin.html' : 'display.html';
 });
+

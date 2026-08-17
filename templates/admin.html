@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Admin dashboard | Nafasi</title>
+  </head>
+  <body class="min-h-screen bg-[#f8f3eb] font-sans text-slate-800">
+    <header class="border-b border-[#d6c19e] bg-[#F5D7AB]">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+        <a href="display.html" class="text-xl font-extrabold tracking-[0.2em]">NAFASI</a>
+        <div class="flex items-center gap-4"><span class="text-sm">Signed in as <strong id="admin-name"></strong></span><button id="logout-button" type="button" class="rounded-lg bg-black px-4 py-2 text-sm font-bold text-white hover:bg-slate-700">Log out</button></div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <div class="mb-7"><p class="text-sm font-bold uppercase tracking-[.18em] text-[#8a6534]">Administration</p><h1 class="mt-1 text-3xl font-extrabold">Dashboard</h1></div>
+      <section class="mb-8 grid gap-4 sm:grid-cols-3">
+        <article class="rounded-xl bg-white p-5 shadow-sm"><p class="text-sm font-semibold text-slate-500">Listings</p><p id="listing-count" class="mt-2 text-3xl font-extrabold">0</p></article>
+        <article class="rounded-xl bg-white p-5 shadow-sm"><p class="text-sm font-semibold text-slate-500">Bookings</p><p id="booking-count" class="mt-2 text-3xl font-extrabold">0</p></article>
+        <article class="rounded-xl bg-white p-5 shadow-sm"><p class="text-sm font-semibold text-slate-500">Users</p><p id="user-count" class="mt-2 text-3xl font-extrabold">0</p></article>
+      </section>
+
+      <p id="dashboard-message" hidden role="status"></p>
+      <section class="mb-8 rounded-xl bg-white p-5 shadow-sm sm:p-7">
+        <h2 id="listing-form-title" class="text-xl font-extrabold">Add a listing</h2>
+        <form id="listing-form" class="mt-5 grid gap-4 md:grid-cols-2">
+          <input id="listing-id" name="id" type="hidden" />
+          <label class="font-semibold">Title<input name="title" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" /></label>
+          <label class="font-semibold">Category<select name="category" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"><option>Workspace</option><option>Leisure</option><option>Events</option></select></label>
+          <label class="font-semibold">Location<input name="location" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" /></label>
+          <label class="font-semibold">Price per booking (KES)<input name="price" type="number" min="0" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" /></label>
+          <label class="font-semibold md:col-span-2">Image URL <span class="font-normal text-slate-500">(optional)</span><input name="image" type="url" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" /></label>
+          <label class="font-semibold md:col-span-2">Description<textarea name="description" required rows="3" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"></textarea></label>
+          <div class="flex gap-3 md:col-span-2"><button type="submit" class="rounded-lg bg-black px-5 py-2.5 font-bold text-white hover:bg-[#8a6534]">Save listing</button><button id="cancel-edit" type="button" hidden class="rounded-lg border border-slate-300 px-5 py-2.5 font-bold">Cancel</button></div>
+        </form>
+      </section>
+
+      <section class="mb-8 overflow-hidden rounded-xl bg-white shadow-sm"><div class="border-b border-slate-200 p-5"><h2 class="text-xl font-extrabold">Listings</h2></div><div class="overflow-x-auto"><table class="w-full min-w-[650px] text-left text-sm"><thead class="bg-slate-50 text-slate-600"><tr><th class="px-4 py-3">Title</th><th class="px-4 py-3">Category</th><th class="px-4 py-3">Location</th><th class="px-4 py-3 text-right">Price</th><th class="px-4 py-3 text-right">Actions</th></tr></thead><tbody id="listings-body"></tbody></table></div><p id="empty-listings" class="p-5 text-slate-500">No listings yet.</p></section>
+      <section class="overflow-hidden rounded-xl bg-white shadow-sm"><div class="border-b border-slate-200 p-5"><h2 class="text-xl font-extrabold">Bookings</h2></div><div class="overflow-x-auto"><table class="w-full min-w-[650px] text-left text-sm"><thead class="bg-slate-50 text-slate-600"><tr><th class="px-4 py-3">Customer</th><th class="px-4 py-3">Space</th><th class="px-4 py-3">Dates</th><th class="px-4 py-3">Payment</th><th class="px-4 py-3 text-right">Action</th></tr></thead><tbody id="bookings-body"></tbody></table></div><p id="empty-bookings" class="p-5 text-slate-500">No bookings yet.</p></section>
+    </main>
+    <script src="../scripts/store.js"></script>
+    <script src="../scripts/admin.dashboard.js"></script>
+  </body>
+</html>

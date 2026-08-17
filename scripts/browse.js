@@ -6,6 +6,14 @@ let spaces = [];
 
 async function loadSpaces() {
   try {
+    if (typeof getListings === 'function') {
+      spaces = getListings();
+      if (spaces.length) {
+        renderSpaces();
+        return;
+      }
+    }
+
     const response = await fetch("../data/spaces.json");
     if (!response.ok) throw new Error(`Request failed (${response.status})`);
 
@@ -25,14 +33,17 @@ function createSpaceCard(space){
    const card = document.createElement('article');
   card.className = 'space-card border border-black text-center font-semibold px-8 py-3.5 rounded-[7px] bg-[#F5D7AB]';
 
-  const image = document.createElement('img');
-  image.src = space.image;
-  image.alt = space.name;
-  image.className = 'w-full h-48 object-cover rounded mb-3';
+  if (space.image) {
+    const image = document.createElement('img');
+    image.src = space.image;
+    image.alt = space.name || space.title;
+    image.className = 'w-full h-48 object-cover rounded mb-3';
+    card.append(image);
+  }
 
   const name = document.createElement('h3');
   name.className = 'text-lg';
-  name.textContent = space.name;
+  name.textContent = space.name || space.title;
 
   const description = document.createElement('p');
   description.className = 'my-3';
@@ -43,7 +54,7 @@ function createSpaceCard(space){
   bookLink.href = space.bookingUrl;
   bookLink.textContent = 'Book Now';
 
-  card.append(image, name, description, bookLink);
+  card.append(name, description, bookLink);
   return card;
 }
 

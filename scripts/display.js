@@ -1,5 +1,6 @@
 const welcomeMessage = document.getElementById('welcome-message');
 const logoutButton = document.getElementById('logout-button');
+const adminDashboardLink = document.getElementById('admin-dashboard-link');
 
 function _readSessionFallback() {
   try {
@@ -14,6 +15,10 @@ const session = (typeof getSession === 'function') ? getSession() : _readSession
 if (welcomeMessage && session && session.firstName) {
   const firstName = String(session.firstName).trim();
   if (firstName) welcomeMessage.textContent = `WELCOME TO NAFASI, ${firstName.toUpperCase()}`;
+}
+
+if (adminDashboardLink && session?.role === 'admin') {
+  adminDashboardLink.hidden = false;
 }
 
 logoutButton?.addEventListener('click', () => {

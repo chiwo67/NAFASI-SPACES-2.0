@@ -26,6 +26,6 @@ loginForm.addEventListener('submit', function (event) {
     loginError.className = 'text-green-500 text-sm mt-2';
     loginError.textContent = 'You have successfully logged in!';
 
-    window.location.href = 'display.html';
+    window.location.href = user.role === 'admin' ? 'admin.html' : 'display.html';
 });
 

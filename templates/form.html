@@ -27,7 +27,7 @@
     <main>
         <section id="FORM" class="flex flex-col items-center justify-center px-3 py-6">
             <h2 class="font-extrabold text-3xl md:text-4xl mb-3 text-white tracking-wide">Book Your Stay</h2>
-            <form action="#" method="post"
+            <form id="booking-form" action="#" method="post"
                 class="w-full max-w-xl border border-gray-200 bg-white/95 shadow-lg rounded-xl text-black px-3 py-3 md:px-4 md:py-4">
                 <div class="mb-4">
                     <label for="name" class="mb-2 block font-extrabold text-lg">Name</label>
@@ -109,7 +109,7 @@
                 class="w-full max-w-xl border border-gray-300 rounded-lg my-3 py-2 px-3 bg-white/90 text-black text-left">
                 <p class="text-sm">By continuing on this site, I acknowledge that I accept the terms and conditions of the company.</p>
                 <label for="checkbox" class="mt-2 inline-block text-sm">
-                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    <input type="checkbox" name="checkbox" id="checkbox" form="booking-form" required>
                     I accept all <a href="T&C.html" class="text-blue-600 underline">terms and conditions</a>.
                 </label>
             </section>

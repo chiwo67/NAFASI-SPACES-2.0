@@ -72,10 +72,10 @@ function seedAdmin() {
     if (!hasAdmin) {
         users.push({
             id: uuid(),
-            firstName: "Nafasi",
-            lastName: "Admin",
-            email: "admin@nafasi.com",
-            password: "Admin123!",
+            firstName: "Ryan",
+            lastName: "Chiwo",
+            email: "chiworyan@gmail.com",
+            password: "Chiwo123!",
             role: "admin",
             createdAt: new Date().toISOString(),
         });

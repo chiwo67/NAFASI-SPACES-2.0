@@ -147,5 +147,10 @@ function showPaymentFields(method) {
     label.classList.toggle('border-slate-200', !isSelected);
   });
 }
+
+const savedPaymentMethod = pendingBooking?.paymentMethod;
+const savedPaymentOption = Array.from(paymentOptions).find((option) => option.value === savedPaymentMethod);
+if (savedPaymentOption) savedPaymentOption.checked = true;
+
 updateBookingSummary();
 showPaymentFields(document.querySelector('input[name="paymentMethod"]:checked').value);

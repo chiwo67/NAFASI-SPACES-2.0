@@ -51,7 +51,9 @@ function createSpaceCard(space){
 
   const bookLink = document.createElement('a');
   bookLink.className = 'book-now-button';
-  bookLink.href = space.bookingUrl;
+  // Admin-created listings do not have a bookingUrl, but they use the same
+  // booking form as the imported listings.
+  bookLink.href = space.bookingUrl || 'form.html';
   bookLink.textContent = 'Book Now';
 
   card.append(name, description, bookLink);
@@ -65,6 +67,14 @@ function renderSpaces() {
     : spaces.filter((space) => space.category === selectedCategory);
 
   spacesList.replaceChildren();
+  if (!visibleSpaces.length) {
+    statusElement.textContent = 'No spaces are available in this category yet.';
+    statusElement.className = 'text-center font-semibold mt-5';
+    statusElement.hidden = false;
+    spacesList.hidden = true;
+    return;
+  }
+
   const categories = [...new Set(visibleSpaces.map((space) => space.category))];
 
   categories.forEach((category) => {
@@ -90,4 +100,5 @@ function renderSpaces() {
   spacesList.hidden = false;
 }
 
+categoryFilter.addEventListener('change', renderSpaces);
 loadSpaces();
